@@ -34,6 +34,7 @@ body {
 .header__text {
     font-size: 1.8rem;
     color: #7E7E82;
+    margin-left: 1rem;
 }
 
 .tab__button {
@@ -51,6 +52,23 @@ body {
 }
 .tab__button:hover{
     filter: opacity(50%);
+}
+
+.button-hide {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+}
+.button-hide:hover{
+    filter: opacity(50%);
+}
+.button-hide__text{
+    font-family: 'TT Lakes Medium', sans-serif;
+    font-weight: bold;
 }
 
 /* MODIFIERS */
