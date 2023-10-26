@@ -12,14 +12,22 @@ body {
 /* BLOCKS */
 
 .brands {
-
-
+    width: 100vw;
+    background-color: #F8F8F8;
 }
 
+.header {
+    background-color: #FFFFFF;
+    padding: 0 0 1rem 1rem;
+}
 
 
 /* ELEMENTS */
 
+.header__text {
+    font-size: 1.8rem;
+    color: #7E7E82;
+}
 
 
 /* MODIFIERS */
