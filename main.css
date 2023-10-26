@@ -21,6 +21,13 @@ body {
     padding: 0 0 1rem 1rem;
 }
 
+.grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    padding: 1rem;
+}
 
 /* ELEMENTS */
 
@@ -29,6 +36,22 @@ body {
     color: #7E7E82;
 }
 
+.tab__button {
+    min-width: 240px;
+    min-height: 72px;
+    margin: 1rem;
+    border-style: solid;
+    border-color: #EAEAEA;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+.tab__button:hover{
+    filter: opacity(50%);
+}
 
 /* MODIFIERS */
 
