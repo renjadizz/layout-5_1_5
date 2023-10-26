@@ -18,14 +18,19 @@ window.onload = (event) => {
         function (show) {
             let hideShowText = document.querySelector(".button-hide__text");
             let hideShowIcon = document.querySelector(".button-hide__image");
+            let hidableButtons = Array.from(document.getElementsByClassName("tab__button--hidable"));
             if (show === false) {
                 hideShowText.textContent = "Скрыть";
                 hideShowIcon.src = "img/icon_hide.svg";
-                let hidableButtons = document.getElementsByClassName(".tab__button--hidable");
+                hidableButtons.forEach(function (elem) {
+                    elem.style.cssText = "display: flex";
+                });
             } else {
                 hideShowText.textContent = "Показать все";
                 hideShowIcon.src = "img/icon_expand.svg";
-                let hidableButtons = document.getElementsByClassName(".tab__button--hidable");
+                hidableButtons.forEach(function (elem) {
+                    elem.style.cssText = "display: none";
+                });
             }
         })
     ;
