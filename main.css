@@ -50,7 +50,8 @@ body {
     align-items: center;
     padding: 0 1rem;
 }
-.tab__button:hover{
+
+.tab__button:hover {
     filter: opacity(50%);
 }
 
@@ -63,16 +64,28 @@ body {
     margin-left: 1rem;
     padding-bottom: 1rem;
 }
-.button-hide:hover{
+
+.button-hide:hover {
     filter: opacity(50%);
 }
-.button-hide__text{
+
+.button-hide__text {
     font-family: 'TT Lakes Medium', sans-serif;
     font-weight: bold;
 }
 
 /* MODIFIERS */
 
-.tab__button--hidable{
+.tab__button--hidable {
     display: none;
+}
+
+
+.swiper-slide {
+    display: flex !important;
+    margin: 0;
+}
+
+.swiper-horizontal {
+    padding: 2rem !important;
 }
