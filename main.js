@@ -85,7 +85,6 @@ window.onload = (event) => {
 
     function onlyOnce(fn) {
         let ran;
-        //console.log(ran);
         return function () {
             if (fn && (window.innerWidth <= 450)) {
                 ran = fn.apply(this, arguments);
@@ -96,7 +95,6 @@ window.onload = (event) => {
     }
 
     const addSwiperOnce = onlyOnce(addSwiper);
-    //window.addEventListener("resize", swiperCard);
     window.addEventListener("resize", addSwiperOnce);
 
 }

@@ -84,6 +84,7 @@ body {
 .swiper-slide {
     display: flex !important;
     margin: 0;
+    justify-content: space-around;
 }
 
 .swiper-horizontal {
