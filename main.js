@@ -13,25 +13,24 @@ window.onload = (event) => {
         }
     }
 
-    hideShowButton.onclick = checkHideShow(
-        function (show) {
-            let hideShowText = document.querySelector(".button-hide__text");
-            let hideShowIcon = document.querySelector(".button-hide__image");
-            let hidableButtons = Array.from(document.getElementsByClassName("tab__button--hidable"));
-            if (show === false) {
-                hideShowText.textContent = "Скрыть";
-                hideShowIcon.src = "img/icon_hide.svg";
-                hidableButtons.forEach(function (elem) {
-                    elem.style.cssText = "display: flex";
-                });
-            } else {
-                hideShowText.textContent = "Показать все";
-                hideShowIcon.src = "img/icon_expand.svg";
-                hidableButtons.forEach(function (elem) {
-                    elem.style.cssText = "display: none";
-                });
-            }
-        });
+    hideShowButton.onclick = checkHideShow(function (show) {
+        let hideShowText = document.querySelector(".button-hide__text");
+        let hideShowIcon = document.querySelector(".button-hide__image");
+        let hidableButtons = Array.from(document.getElementsByClassName("tab__button--hidable"));
+        if (show === false) {
+            hideShowText.textContent = "Скрыть";
+            hideShowIcon.src = "img/icon_hide.svg";
+            hidableButtons.forEach(function (elem) {
+                elem.style.cssText = "display: flex";
+            });
+        } else {
+            hideShowText.textContent = "Показать все";
+            hideShowIcon.src = "img/icon_expand.svg";
+            hidableButtons.forEach(function (elem) {
+                elem.style.cssText = "display: none";
+            });
+        }
+    });
 
     let init = false;
     let swiper;
@@ -41,14 +40,8 @@ window.onload = (event) => {
             if (!init) {
                 init = true;
                 swiper = new Swiper(".swiper", {
-                    direction: "horizontal",
-                    slidesPerView: 1,
-                    centeredSlides: true,
-                    spaceBetween: 1,
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: false,
-                        setWrapperSize: false,
+                    direction: "horizontal", slidesPerView: 1, centeredSlides: true, spaceBetween: 5, pagination: {
+                        el: ".swiper-pagination", clickable: false, setWrapperSize: false,
                     },
                 });
             }
@@ -61,7 +54,6 @@ window.onload = (event) => {
 
     function addSwiper() {
 
-        //console.log("ran");button-hide
         let hideButton = document.querySelector(".button-hide");
         hideButton.remove();
         let gridContainer = document.querySelector(".grid");
@@ -83,20 +75,9 @@ window.onload = (event) => {
 
     }
 
-    function onlyOnce(fn) {
-        let ran;
-        return function () {
-            if (fn && (window.innerWidth <= 450)) {
-                ran = fn.apply(this, arguments);
-                fn = null;
-            }
-            return fn;
-        }
+    if (window.innerWidth <= 400) {
+        addSwiper();
     }
-
-    const addSwiperOnce = onlyOnce(addSwiper);
-    window.addEventListener("resize", addSwiperOnce);
-
 }
 
 
